@@ -11,7 +11,9 @@ for letters in 'Who keeps company with the wolf, will learn to howl.':
 print(sym)
 
 # №2
+var = 'Who keeps company with the wolf, will learn to howl.'
 
-str = 'Who keeps company with the wolf, will learn to howl.'
-res_str = str.replace(exclude, '')
-print(res_str)
+for i in var:
+    if i != exclude:
+        print((i), end="")
+        
