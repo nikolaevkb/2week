@@ -9,30 +9,39 @@ while True:
     if s == "DEL":
         break
     if s in ('#', '!', '@', '$'):
-        a = int(input("a = "))
-        b = int(input("b = "))
+        a = input("a = ")
+        b = input("b = ")
+
         if s == "#":
-            print(b % a)
+            print(int(b) % int(a))
 
         elif s == '!':
 
-            num1 = a
-            num2 = b
-            sum1 = 0
-            sum2 = 0
-            while (num1 != 0, num2 != 0):
-                sum1 = sum1 + num1 % 10
-                num1 = num1 // 10
-                sum2 = sum2 + num2 % 10
-                num2 = num2 // 10
-
-                print(max(sum1, sum2))
+            sum_one = 0
+            sum_two = 0
+            for letters in str(a):
+                sum_one += int(letters)
+            for letters in str(b):
+                sum_two += int(letters)
+            if sum_one > sum_two:
+                print(a)
+            else:
+                print(b)
 
         elif s == "@":
-            print(max(a, b))
+            print(max(int(a), int(b)))
 
         elif s == "$":
-            print(max(str(a), str(b)))
+            count_one = 0
+            count_two = 0
+            for letters in str(a):
+                count_one += len(letters)
+            for letters in str(b):
+                count_two += len(letters)
+            if count_one > count_two:
+                print(a)
+            else:
+                print(b)
 
     else:
         print("Неверный знак операции!")
